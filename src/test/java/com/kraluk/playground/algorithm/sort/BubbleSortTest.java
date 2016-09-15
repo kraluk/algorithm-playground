@@ -10,7 +10,7 @@ public class BubbleSortTest {
         int[] array = {345, 2, 34, 1, 999, 0, 555};
         BubbleSort.sort(array);
 
-        Assert.assertArrayEquals(new int[] {0, 1, 2, 34, 345, 555, 999}, array);
+        Assert.assertArrayEquals(new int[]{0, 1, 2, 34, 345, 555, 999}, array);
     }
 
     @Test
@@ -18,6 +18,6 @@ public class BubbleSortTest {
         int[] array = {345, 2, 34, 1, 999, 0, 555};
         BubbleSort.sortInverse(array);
 
-        Assert.assertArrayEquals(new int[] {0, 1, 2, 34, 345, 555, 999}, array);
+        Assert.assertArrayEquals(new int[]{0, 1, 2, 34, 345, 555, 999}, array);
     }
 }

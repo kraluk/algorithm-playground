@@ -4,6 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 
+import static com.kraluk.playground.algorithm.util.Maths.finMinIndex;
+import static com.kraluk.playground.algorithm.util.Maths.swap;
+
 /**
  * Selection Sort implementation
  *
@@ -24,23 +27,5 @@ public class SelectionSort {
                 swap(numArray, i - 1, min);
             }
         }
-    }
-
-    public static int finMinIndex(int[] array, int from) {
-        int minIndex = from;
-
-        for (int i = from + 1; i < array.length; i++) {
-            if (array[i] < array[minIndex]) {
-                minIndex = i;
-            }
-        }
-
-        return minIndex;
-    }
-
-    public static void swap(int[] array, int i, int j) {
-        int tmp = array[j];
-        array[j] = array[i];
-        array[i] = tmp;
     }
 }
