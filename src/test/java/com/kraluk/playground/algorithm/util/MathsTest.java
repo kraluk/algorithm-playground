@@ -10,7 +10,7 @@ public class MathsTest {
     @Test
     public void finMinIndexTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
-        int index = Maths.finMinIndex(array, 0);
+        int index = Maths.findMinIndex(array, 0);
 
         assertEquals(1, index);
     }
@@ -18,7 +18,7 @@ public class MathsTest {
     @Test
     public void finMinIndexSecondTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
-        int index = Maths.finMinIndex(array, 2);
+        int index = Maths.findMinIndex(array, 2);
 
         assertEquals(3, index);
     }
@@ -26,7 +26,7 @@ public class MathsTest {
     @Test
     public void finMinIndexThirdTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
-        int index = Maths.finMinIndex(array, 5);
+        int index = Maths.findMinIndex(array, 5);
 
         assertEquals(5, index);
     }

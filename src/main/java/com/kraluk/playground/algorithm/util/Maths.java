@@ -7,7 +7,7 @@ package com.kraluk.playground.algorithm.util;
  */
 public class Maths {
 
-    public static int finMinIndex(int[] array, int from) {
+    public static int findMinIndex(int[] array, int from) {
         int minIndex = from;
 
         for (int i = from + 1; i < array.length; i++) {
