@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'idea'
+    id 'application'
+}
+
+// Project settings
+group = 'com.kraluk.playground.algorithm'
+version = '0.1.0-SNAPSHOT'
+
+mainClassName = 'com.kraluk.playground.algorithm.Application'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Algorithm Playground',
+                'Implementation-Version': version,
+                'Main-Class': mainClassName
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+// Java version
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
+
+    // Additional stuff
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+
+    // Test dependencies
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.0'
+}
