@@ -3,6 +3,7 @@ plugins {
     id 'groovy'
     id 'idea'
     id 'application'
+    id 'jacoco'
 }
 
 // Project settings
@@ -20,6 +21,12 @@ jar {
 
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
     }
 }
 
