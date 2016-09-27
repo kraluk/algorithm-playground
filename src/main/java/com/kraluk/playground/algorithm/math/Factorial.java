@@ -16,7 +16,7 @@ public class Factorial {
 
         long result = 1;
 
-        for (long i = 1; i <= number; i++) {
+        for (long i = 2; i <= number; i++) {
             result *= i;
         }
 
