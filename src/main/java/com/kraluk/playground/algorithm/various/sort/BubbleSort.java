@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.sort;
+package com.kraluk.playground.algorithm.various.sort;
 
 import lombok.extern.slf4j.Slf4j;
 

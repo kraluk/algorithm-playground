@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.math;
+package com.kraluk.playground.algorithm.various.math;
 
 import static com.kraluk.playground.algorithm.util.Integers.isInteger;
 import static com.kraluk.playground.algorithm.util.Logarithms.log;

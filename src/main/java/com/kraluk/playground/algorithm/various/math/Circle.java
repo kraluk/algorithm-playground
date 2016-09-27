@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.math;
+package com.kraluk.playground.algorithm.various.math;
 
 /**
  * Simple operation related with a Circle figure

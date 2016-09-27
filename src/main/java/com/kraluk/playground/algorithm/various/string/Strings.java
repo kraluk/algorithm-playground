@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.string;
+package com.kraluk.playground.algorithm.various.string;
 
 import com.kraluk.playground.algorithm.enums.CaseType;
 

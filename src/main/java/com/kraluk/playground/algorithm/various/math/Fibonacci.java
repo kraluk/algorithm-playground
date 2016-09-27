@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.math;
+package com.kraluk.playground.algorithm.various.math;
 
 /**
  * Fibonacci Sequence Calculations
