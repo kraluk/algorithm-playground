@@ -7,13 +7,13 @@ class SelectionSortSpec extends Specification {
     def "sort given array with Selection Sort"() {
 
         given:
-        int[] array = [345, 2, 34, 1, 999, 0, 555]
-        int[] sorted = [0, 1, 2, 34, 345, 555, 999]
+            int[] array = [345, 2, 34, 1, 999, 0, 555]
+            int[] sorted = [0, 1, 2, 34, 345, 555, 999]
 
         when:
-        SelectionSort.sort(array)
+            SelectionSort.sort(array)
 
         then:
-        array == sorted
+            array == sorted
     }
 }
