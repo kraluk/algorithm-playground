@@ -13,7 +13,7 @@ import static com.kraluk.playground.algorithm.util.Multiples.getMultiples;
  *
  * @author lukasz
  */
-public class MultiplesOfThreeAndFiveSummer {
+public class MultiplesOfThreeAndFive {
 
     public static long calculate(long limit) {
         long result = 0;

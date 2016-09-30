@@ -2,11 +2,11 @@ package com.kraluk.playground.algorithm.euler
 
 import spock.lang.Specification
 
-class FibonacciEvenSummerTest extends Specification {
+class EvenFibonacciNumbersSpec extends Specification {
 
     def "calculate sum of even values (which maximum value is limited) of the Fibonacci sequences (for loop)"() {
         expect:
-            FibonacciEvenSummer.calculate(maximum) == expected
+            EvenFibonacciNumbers.calculate(maximum) == expected
 
         where:
             maximum    | expected
@@ -21,7 +21,7 @@ class FibonacciEvenSummerTest extends Specification {
 
     def "calculate sum of even values (which maximum value is limited) of the Fibonacci sequences (while loop)"() {
         expect:
-            FibonacciEvenSummer.calculateWhiled(maximum) == expected
+            EvenFibonacciNumbers.calculateWhiled(maximum) == expected
 
         where:
             maximum    | expected
@@ -36,7 +36,7 @@ class FibonacciEvenSummerTest extends Specification {
 
     def "calculate sum of even values (which maximum value is limited) of the Fibonacci sequences (optimized)"() {
         expect:
-            FibonacciEvenSummer.calculateOptimized(maximum) == expected
+            EvenFibonacciNumbers.calculateOptimized(maximum) == expected
 
         where:
             maximum    | expected

@@ -7,7 +7,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
 
     def "calculate sum of multiples of given number through the given limit"() {
         expect:
-            MultiplesOfThreeAndFiveSummer.calculate(limit) == expected
+            MultiplesOfThreeAndFive.calculate(limit) == expected
 
         where:
             limit         | expected
@@ -19,7 +19,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
 
     def "calculate sum of multiples of given number through the given limit (optimized)"() {
         expect:
-            MultiplesOfThreeAndFiveSummer.calculateOptimized(limit) == expected
+            MultiplesOfThreeAndFive.calculateOptimized(limit) == expected
 
         where:
             limit         | expected
@@ -33,7 +33,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
 
     def "(legacy) calculate sum of multiples of given number through the given limit"() {
         expect:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculate(limit) == expected
+            MultiplesOfThreeAndFive.Legacy.calculate(limit) == expected
 
         where:
             limit | expected
@@ -44,7 +44,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
     def "(legacy) illegal limit for simple calculation"() {
 
         when:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculate(Multiples.MAX_LIMIT)
+            MultiplesOfThreeAndFive.Legacy.calculate(Multiples.MAX_LIMIT)
 
         then:
             thrown IllegalArgumentException
@@ -52,7 +52,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
 
     def "(legacy) calculate sum of multiples of given number through the given limit (Executor)"() {
         expect:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculateWithExecutor(limit) == expected
+            MultiplesOfThreeAndFive.Legacy.calculateWithExecutor(limit) == expected
 
         where:
             limit | expected
@@ -63,7 +63,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
     def "(legacy) illegal limit for calculation with usage of Executor"() {
 
         when:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculateWithExecutor(Multiples.MAX_LIMIT)
+            MultiplesOfThreeAndFive.Legacy.calculateWithExecutor(Multiples.MAX_LIMIT)
 
         then:
             thrown IllegalArgumentException
@@ -71,7 +71,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
 
     def "(legacy) calculate sum of multiples of given number through the given limit (CompletableFuture)"() {
         expect:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculateWithCompletableFuture(limit) == expected
+            MultiplesOfThreeAndFive.Legacy.calculateWithCompletableFuture(limit) == expected
 
         where:
             limit | expected
@@ -82,7 +82,7 @@ class MultiplesOfThreeAndFiveSpec extends Specification {
     def "(legacy) illegal limit for calculation with usage of CompletableFuture"() {
 
         when:
-            MultiplesOfThreeAndFiveSummer.Legacy.calculateWithCompletableFuture(Multiples.MAX_LIMIT)
+            MultiplesOfThreeAndFive.Legacy.calculateWithCompletableFuture(Multiples.MAX_LIMIT)
 
         then:
             thrown IllegalArgumentException

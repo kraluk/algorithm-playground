@@ -5,7 +5,7 @@ package com.kraluk.playground.algorithm.euler;
  *
  * @author lukasz
  */
-public class FibonacciEvenSummer {
+public class EvenFibonacciNumbers {
 
     public static long calculate(long maximum) {
         long result = 0;
