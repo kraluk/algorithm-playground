@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.math
 
-import com.kraluk.playground.algorithm.various.math.PowerOfTwo
 import spock.lang.Specification
 
 class PowerOfTwoSpec extends Specification {

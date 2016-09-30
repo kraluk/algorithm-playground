@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.math
 
-import com.kraluk.playground.algorithm.various.math.Fibonacci
 import spock.lang.Specification
 
 class FibonacciSpec extends Specification {

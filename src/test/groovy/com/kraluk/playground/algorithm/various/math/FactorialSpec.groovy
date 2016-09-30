@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.math
 
-import com.kraluk.playground.algorithm.various.math.Factorial
 import spock.lang.Specification
 
 class FactorialSpec extends Specification {

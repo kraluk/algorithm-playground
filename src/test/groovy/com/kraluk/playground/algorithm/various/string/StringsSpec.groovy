@@ -1,7 +1,6 @@
 package com.kraluk.playground.algorithm.various.string
 
 import com.kraluk.playground.algorithm.enums.CaseType
-import com.kraluk.playground.algorithm.various.string.Strings
 import spock.lang.Specification
 
 class StringsSpec extends Specification {
@@ -44,6 +43,7 @@ class StringsSpec extends Specification {
     }
 
     def "change first letter"() {
+
         expect:
             Strings.changeFirstCharacter(input) == expected
 
@@ -56,6 +56,7 @@ class StringsSpec extends Specification {
     }
 
     def "justify to left"() {
+
         expect:
             Strings.justifyLeft(input, lenght) == expected
 
@@ -66,6 +67,7 @@ class StringsSpec extends Specification {
     }
 
     def "justify to right"() {
+
         expect:
             Strings.justifyRight(input, lenght) == expected
 

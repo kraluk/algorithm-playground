@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.sort
 
-import com.kraluk.playground.algorithm.various.sort.SelectionSort
 import spock.lang.Specification
 
 class SelectionSortSpec extends Specification {

@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.math
 
-import com.kraluk.playground.algorithm.various.math.Power
 import spock.lang.Specification
 
 class PowerSpec extends Specification {

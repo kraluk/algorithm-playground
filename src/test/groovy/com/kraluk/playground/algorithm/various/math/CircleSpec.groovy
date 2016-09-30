@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.various.math
 
-import com.kraluk.playground.algorithm.various.math.Circle
 import spock.lang.Specification
 
 import static spock.util.matcher.HamcrestMatchers.closeTo
