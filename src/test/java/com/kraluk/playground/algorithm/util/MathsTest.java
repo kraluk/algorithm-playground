@@ -46,4 +46,18 @@ public class MathsTest {
 
         assertArrayEquals(new int[]{345, 2, 34, 1, 999, 0, 555}, array);
     }
+
+    @Test
+    public void isPrimeTest() {
+        boolean result = Maths.isPrime(29);
+
+        assertEquals(true, result);
+    }
+
+    @Test
+    public void isPrimeSecondTest() {
+        boolean result = Maths.isPrime(81);
+
+        assertEquals(false, result);
+    }
 }

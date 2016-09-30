@@ -24,4 +24,21 @@ public class Maths {
         array[j] = array[i];
         array[i] = tmp;
     }
+
+    public static boolean isPrime(long number) {
+
+        // Even test - note: 2 is even, but it's also a prime number!
+        if (number > 2 && (number & 1) == 0) {
+            return false;
+        }
+
+        // Only odd factors need to be tested up to number^(1/2)
+        for (int i = 3; i * i <= number; i += 2) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
