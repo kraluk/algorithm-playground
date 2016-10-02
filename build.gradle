@@ -4,6 +4,7 @@ plugins {
     id 'idea'
     id 'application'
     id 'jacoco'
+    id 'me.champeau.gradle.jmh' version '0.3.1'
 }
 
 // Project settings
@@ -22,6 +23,16 @@ jar {
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}
+
+jmh {
+    iterations = 10
+    fork = 2
+    threads = 4
+    warmupIterations = 10
+    timeUnit = 'ms'
+    verbosity = 'NORMAL'
+    jmhVersion = '1.12'
 }
 
 jacocoTestReport {
