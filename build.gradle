@@ -26,10 +26,10 @@ jar {
 }
 
 jmh {
-    iterations = 10
-    fork = 2
-    threads = 4
-    warmupIterations = 10
+    iterations = 5
+    fork = 1
+    threads = 8
+    warmupIterations = 5
     timeUnit = 'ms'
     verbosity = 'NORMAL'
     jmhVersion = '1.12'
