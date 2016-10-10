@@ -1,6 +1,5 @@
 package com.kraluk.playground.algorithm.euler
 
-import spock.lang.Ignore
 import spock.lang.Specification
 
 class LargestPrimeFactorSpec extends Specification {
@@ -11,24 +10,49 @@ class LargestPrimeFactorSpec extends Specification {
             LargestPrimeFactor.calculate(number) == expected
 
         where:
-            number              | expected
-            2                   | -1
-            13_195              | 29
-            600_851_475_143     | 6_857
-            222_634_543_654_234 | 5_477
+            number        | expected
+            13_195        | 29
+            124_234       | 5_647
+            600_851_475   | 54_499
+            9_345_333_122 | 245_929_819
     }
 
-    @Ignore
+    def "calculate largest prime factor of the given number (very crude)"() {
+
+        expect:
+            LargestPrimeFactor.calculateVeryCruded(number) == expected
+
+        where:
+            number        | expected
+            13_195        | 29
+            124_234       | 5_647
+            600_851_475   | 54_499
+            9_345_333_122 | 245_929_819
+    }
+
+    def "calculate largest prime factor of the given number (improved)"() {
+
+        expect:
+            LargestPrimeFactor.calculateImproved(number) == expected
+
+        where:
+            number        | expected
+            13_195        | 29
+            124_234       | 5_647
+            600_851_475   | 54_499
+            9_345_333_122 | 245_929_819
+    }
+
     def "calculate largest prime factor of the given number (optimized)"() {
 
         expect:
             LargestPrimeFactor.calculateOptimized(number) == expected
 
         where:
-            number              | expected
-            2                   | -1
-            13_195              | 29
-            600_851_475_143     | 6_857
-            222_634_543_654_234 | 5_477
+            number        | expected
+            13_195        | 29
+            124_234       | 5_647
+            600_851_475   | 54_499
+            9_345_333_122 | 245_929_819
     }
 }
