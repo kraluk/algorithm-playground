@@ -41,4 +41,26 @@ public class Maths {
 
         return true;
     }
+
+    public static boolean isPalindrome(long number) {
+        String unreversed = String.valueOf(number);
+        String reversed = new StringBuilder(String.valueOf(number)).reverse().toString();
+
+        return unreversed.equals(reversed);
+    }
+
+    public static boolean isPalindromeOptimized(long number) {
+        return number == reverse(number);
+    }
+
+    public static long reverse(long number) {
+        long reversed = 0;
+
+        while (number > 0) {
+            reversed = 10 * reversed + (number % 10);
+            number /= 10;
+        }
+
+        return reversed;
+    }
 }
