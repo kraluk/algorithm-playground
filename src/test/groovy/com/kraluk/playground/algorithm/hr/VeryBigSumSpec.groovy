@@ -20,11 +20,11 @@ class VeryBigSumSpec extends Specification {
 
     def "should run by invoking main method"() {
         given:
-        def inStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inStream);
+        def inStream = new ByteArrayInputStream(input.getBytes())
+        System.setIn(inStream)
 
-        def outStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outStream));
+        def outStream = new ByteArrayOutputStream()
+        System.setOut(new PrintStream(outStream))
 
         when:
         VeryBigSum.main()

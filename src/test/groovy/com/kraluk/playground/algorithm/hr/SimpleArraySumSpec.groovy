@@ -44,11 +44,11 @@ class SimpleArraySumSpec extends Specification {
 
     def "should run by invoking main method (classic version)"() {
         given:
-        def inStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inStream);
+        def inStream = new ByteArrayInputStream(input.getBytes())
+        System.setIn(inStream)
 
-        def outStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outStream));
+        def outStream = new ByteArrayOutputStream()
+        System.setOut(new PrintStream(outStream))
 
         when:
         SimpleArraySum.Classic.main()
@@ -64,11 +64,11 @@ class SimpleArraySumSpec extends Specification {
 
     def "should calculate a sum of integers based on the input string (compact version)"() {
         given:
-        def inStream = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inStream);
+        def inStream = new ByteArrayInputStream(input.getBytes())
+        System.setIn(inStream)
 
-        def outStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outStream));
+        def outStream = new ByteArrayOutputStream()
+        System.setOut(new PrintStream(outStream))
 
         when:
         def actual = SimpleArraySum.Compact.calculate(input)

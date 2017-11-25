@@ -19,11 +19,11 @@ class CompareTheTripletsSpec extends Specification {
 
     def "should return a result to the SOUT"() {
         given:
-        def inStream = new ByteArrayInputStream("1\n2\n1\n2\n1\n2\n".getBytes());
-        System.setIn(inStream);
+        def inStream = new ByteArrayInputStream("1\n2\n1\n2\n1\n2\n".getBytes())
+        System.setIn(inStream)
 
-        def outStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outStream));
+        def outStream = new ByteArrayOutputStream()
+        System.setOut(new PrintStream(outStream))
 
         when:
         CompareTheTriplets.main()
