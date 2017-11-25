@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.enums;
+package com.kraluk.playground.algorithm.common;
 
 /**
  * Letter Case Enum

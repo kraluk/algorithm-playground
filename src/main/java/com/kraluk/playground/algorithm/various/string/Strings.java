@@ -1,6 +1,6 @@
 package com.kraluk.playground.algorithm.various.string;
 
-import com.kraluk.playground.algorithm.enums.CaseType;
+import com.kraluk.playground.algorithm.common.CaseType;
 
 /**
  * Simple String Operations
