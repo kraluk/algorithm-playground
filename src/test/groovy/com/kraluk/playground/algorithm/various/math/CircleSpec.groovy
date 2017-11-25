@@ -9,12 +9,12 @@ class CircleSpec extends Specification {
     def "calculates circle area"() {
 
         given:
-            Double r = 5.0;
+        Double r = 5.0;
 
         when:
-            Double area = Circle.calculateArea(r);
+        Double area = Circle.calculateArea(r);
 
         then:
-            area closeTo(Math.PI * r * r, 0.01)
+        area closeTo(Math.PI * r * r, 0.01)
     }
 }
