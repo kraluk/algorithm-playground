@@ -1,11 +1,14 @@
 package com.kraluk.playground.algorithm.util;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * Logarithms Common Utils
  *
  * @author lukasz
  */
-public class Logarithms {
+@UtilityClass
+public final class Logarithms {
 
     public static double log(long number, long base) {
         return Math.log(number) / Math.log(base);

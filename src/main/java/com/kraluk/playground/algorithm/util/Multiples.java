@@ -11,7 +11,7 @@ import java.util.Set;
  * @author lukasz
  */
 @UtilityClass
-public class Multiples {
+public final class Multiples {
     public static final long MAX_LIMIT = 1_000_000;
 
     @Deprecated
