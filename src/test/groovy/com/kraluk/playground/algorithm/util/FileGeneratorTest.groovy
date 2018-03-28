@@ -10,7 +10,7 @@ import static spock.util.matcher.HamcrestMatchers.closeTo
 class FileGeneratorTest extends Specification {
 
     final def ACCEPTABLE_ERROR = 1e-2
-    final def SIZE = 0.01
+    final def SIZE = 0.1
 
     Path outputDirectory
     Path outputFile
