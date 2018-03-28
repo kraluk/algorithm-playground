@@ -1,8 +1,5 @@
 package com.kraluk.playground.algorithm.rpn.solver;
 
-/**
- * Interface
- */
 @FunctionalInterface
 public interface EquationSolver {
 
