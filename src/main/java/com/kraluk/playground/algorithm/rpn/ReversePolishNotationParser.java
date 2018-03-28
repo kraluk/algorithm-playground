@@ -3,7 +3,7 @@ package com.kraluk.playground.algorithm.rpn;
 import com.kraluk.playground.algorithm.rpn.solver.EquationSolver;
 import com.kraluk.playground.algorithm.rpn.solver.EquationSolver.SolverType;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
  *
  * @author lukasz
  */
-@Slf4j
+@Log4j2
 public final class ReversePolishNotationParser {
 
     private static final String DELIMITER = " ";

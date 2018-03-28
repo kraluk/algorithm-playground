@@ -1,6 +1,6 @@
 package com.kraluk.playground.algorithm.various.sort;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ import static com.kraluk.playground.algorithm.util.Maths.swap;
  *
  * @author lukasz
  */
-@Slf4j
+@Log4j2
 public class SelectionSort {
 
     public static void sort(int[] numArray) {

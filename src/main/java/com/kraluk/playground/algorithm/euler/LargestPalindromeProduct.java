@@ -1,6 +1,6 @@
 package com.kraluk.playground.algorithm.euler;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 import static com.kraluk.playground.algorithm.util.Maths.isPalindrome;
 
@@ -9,7 +9,7 @@ import static com.kraluk.playground.algorithm.util.Maths.isPalindrome;
  *
  * @author lukasz
  */
-@Slf4j
+@Log4j2
 public class LargestPalindromeProduct {
 
     public static long calculate(int digits) {

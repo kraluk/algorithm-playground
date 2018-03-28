@@ -1,14 +1,14 @@
 package com.kraluk.playground.algorithm.various.structure;
 
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * Singly LinkedList operations
  *
  * @author lukasz
  */
-@Slf4j
+@Log4j2
 public class SinglyLinkedList {
 
     public static Node reverse(Node head) {
