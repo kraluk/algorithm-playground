@@ -4,9 +4,9 @@
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="log-file" fileName="log/playground.log" immediateFlush="false" append="false">
+        <RandomAccessFile name="log-file" fileName="log/playground.log" immediateFlush="false" append="false">
             <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
+        </RandomAccessFile>
     </Appenders>
     <Loggers>
         <Root level="debug">
