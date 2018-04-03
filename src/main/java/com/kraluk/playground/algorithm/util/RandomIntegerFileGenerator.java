@@ -30,6 +30,7 @@ public final class RandomIntegerFileGenerator {
 
     private static final double GIG = 1_000_000_000;
     private static final int CHUNK_CHECK_SIZE = 10_000;
+    private static final int BLOCK_SIZE = 100;
 
     private static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
 
@@ -70,9 +71,11 @@ public final class RandomIntegerFileGenerator {
             int chunkCounter = 0;
 
             while (true) {
-                writeHundredElements(writer);
+                writeNumberBlock(writer);
 
-                if (++chunkCounter == CHUNK_CHECK_SIZE) {
+                ++chunkCounter;
+
+                if (chunkCounter == CHUNK_CHECK_SIZE) {
                     final long size = Files.size(output); // bleh, heavy IO operation...
 
                     log.debug(() -> format("Size: %.3f GB", size / GIG));
@@ -93,11 +96,11 @@ public final class RandomIntegerFileGenerator {
             Files.size(output) / GIG));
     }
 
-    private void writeHundredElements(final PrintWriter writer) {
+    private void writeNumberBlock(final PrintWriter writer) {
         writer.print(EMPTY);
         writer.print(generateNumber());
 
-        IntStream.range(1, 100).forEach(i -> {
+        IntStream.range(1, BLOCK_SIZE).forEach(i -> {
             writer.print(SPACE);
             writer.print(generateNumber());
         });
