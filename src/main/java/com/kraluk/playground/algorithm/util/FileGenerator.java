@@ -1,11 +1,10 @@
 package com.kraluk.playground.algorithm.util;
 
-import lombok.SneakyThrows;
-import lombok.extern.log4j.Log4j2;
-
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -26,8 +25,9 @@ import static org.apache.commons.lang3.StringUtils.SPACE;
  *
  * @author lukasz
  */
-@Log4j2
 public final class FileGenerator {
+    private static final Logger log = LogManager.getLogger(FileGenerator.class);
+
     private static final double GIG = 1_000_000_000;
     private static final int CHUNK_CHECK_SIZE = 10_000;
 
@@ -49,8 +49,7 @@ public final class FileGenerator {
         this.output = output;
     }
 
-    @SneakyThrows
-    public void generate() {
+    public void generate() throws IOException {
         log.info(format("Attempting to generate file with size %.3f GB", outputSize / GIG));
 
         final StopWatch stopWatch = new StopWatch();

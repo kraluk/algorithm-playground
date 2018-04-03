@@ -1,7 +1,5 @@
 package com.kraluk.playground.algorithm.util;
 
-import lombok.experimental.UtilityClass;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,7 +8,6 @@ import java.util.Set;
  *
  * @author lukasz
  */
-@UtilityClass
 public final class Multiples {
     public static final long MAX_LIMIT = 1_000_000;
 

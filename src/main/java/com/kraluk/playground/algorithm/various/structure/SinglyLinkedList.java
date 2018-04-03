@@ -1,15 +1,15 @@
 package com.kraluk.playground.algorithm.various.structure;
 
-import lombok.ToString;
-import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Singly LinkedList operations
  *
  * @author lukasz
  */
-@Log4j2
 public class SinglyLinkedList {
+    private static final Logger log = LogManager.getLogger(SinglyLinkedList.class);
 
     public static Node reverse(Node head) {
         Node headOfUnreversed = head;
@@ -35,13 +35,20 @@ public class SinglyLinkedList {
         return headOfReversed;
     }
 
-    @ToString
-    public static class Node {
+    private static class Node {
         public int value;
         public Node next;
 
         public Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
         }
     }
 }

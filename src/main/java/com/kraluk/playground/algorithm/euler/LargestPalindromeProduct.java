@@ -1,6 +1,7 @@
 package com.kraluk.playground.algorithm.euler;
 
-import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static com.kraluk.playground.algorithm.util.Maths.isPalindrome;
 
@@ -9,8 +10,8 @@ import static com.kraluk.playground.algorithm.util.Maths.isPalindrome;
  *
  * @author lukasz
  */
-@Log4j2
 public class LargestPalindromeProduct {
+    private static final Logger log = LogManager.getLogger(LargestPalindromeProduct.class);
 
     public static long calculate(int digits) {
         if (digits < 2) {

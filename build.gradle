@@ -35,8 +35,12 @@ uptodate {
 check.dependsOn 'uptodate'
 
 // Java version
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_10
+targetCompatibility = JavaVersion.VERSION_1_10
+
+jacoco {
+    toolVersion = '0.8.1'
+}
 
 repositories {
     mavenLocal()
@@ -48,9 +52,6 @@ dependencies {
 
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.0'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.0'
-
-    // Additional stuff
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     compile group: 'net.objecthunter', name: 'exp4j', version: '0.4.8'

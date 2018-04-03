@@ -1,7 +1,7 @@
 package com.kraluk.playground.algorithm.various.sort;
 
-import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
@@ -10,8 +10,8 @@ import java.util.Arrays;
  *
  * @author lukasz
  */
-@Log4j2
 public class BubbleSort {
+    private static final Logger log = LogManager.getLogger(BubbleSort.class);
 
     public static void sort(int[] numArray) {
 

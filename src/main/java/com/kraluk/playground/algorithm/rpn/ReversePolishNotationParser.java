@@ -3,9 +3,9 @@ package com.kraluk.playground.algorithm.rpn;
 import com.kraluk.playground.algorithm.rpn.solver.EquationSolver;
 import com.kraluk.playground.algorithm.rpn.solver.EquationSolver.SolverType;
 
-import lombok.extern.log4j.Log4j2;
-
 import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
@@ -22,8 +22,9 @@ import java.util.regex.Pattern;
  *
  * @author lukasz
  */
-@Log4j2
 public final class ReversePolishNotationParser {
+    private static final Logger log = LogManager.getLogger(ReversePolishNotationParser.class);
+
 
     private static final String DELIMITER = " ";
     private static final String TWO_ARG_EXPRESSION_FORMAT = "%s%s%s";

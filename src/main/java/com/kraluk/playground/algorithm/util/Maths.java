@@ -1,13 +1,10 @@
 package com.kraluk.playground.algorithm.util;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * Common Mathematical operations
  *
  * @author lukasz
  */
-@UtilityClass
 public final class Maths {
 
     public static int findMinIndex(int[] array, int from) {

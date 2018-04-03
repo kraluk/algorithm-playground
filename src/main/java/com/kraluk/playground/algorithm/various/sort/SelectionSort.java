@@ -1,6 +1,7 @@
 package com.kraluk.playground.algorithm.various.sort;
 
-import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
@@ -12,8 +13,8 @@ import static com.kraluk.playground.algorithm.util.Maths.swap;
  *
  * @author lukasz
  */
-@Log4j2
 public class SelectionSort {
+    private static final Logger log = LogManager.getLogger(SelectionSort.class);
 
     public static void sort(int[] numArray) {
         int n = numArray.length;
