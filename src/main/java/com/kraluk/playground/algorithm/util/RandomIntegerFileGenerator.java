@@ -21,12 +21,12 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.apache.commons.lang3.StringUtils.SPACE;
 
 /**
- * Random number file generator
+ * Random *integer* numbers file generator
  *
  * @author lukasz
  */
-public final class FileGenerator {
-    private static final Logger log = LogManager.getLogger(FileGenerator.class);
+public final class RandomIntegerFileGenerator {
+    private static final Logger log = LogManager.getLogger(RandomIntegerFileGenerator.class);
 
     private static final double GIG = 1_000_000_000;
     private static final int CHUNK_CHECK_SIZE = 10_000;
@@ -37,18 +37,28 @@ public final class FileGenerator {
     private final Path output;
 
     /**
-     * Creates instance of {@link FileGenerator}
+     * Creates instance of {@link RandomIntegerFileGenerator}
      *
      * @param outputSize size of the output file in gigabytes
      * @param output     a {@link Path} representing output file
      */
-    public FileGenerator(final double outputSize, final Path output) {
+    public RandomIntegerFileGenerator(final double outputSize, final Path output) {
         Validate.isTrue(Files.isRegularFile(output), "Output Path should be a regular file!");
 
         this.outputSize = outputSize * GIG; // gigabyte in bytes
         this.output = output;
     }
 
+    /**
+     * Generates a file containing {@link #outputSize} GB random integers.
+     * <br/>
+     * Due to performance reasons, we're not checking the produced file's size after each write
+     * (it means after writing one block of hundred numbers), but after writing {@link #CHUNK_CHECK_SIZE}
+     * blocks - this solution provides some problems with estimating the size of an output file,
+     * which at the end should contain approximately the given amount of data.
+     *
+     * @throws IOException when there will be some problems with the IO operations
+     */
     public void generate() throws IOException {
         log.info(format("Attempting to generate file with size %.3f GB", outputSize / GIG));
 
