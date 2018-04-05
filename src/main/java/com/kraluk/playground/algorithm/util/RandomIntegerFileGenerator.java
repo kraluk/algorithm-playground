@@ -1,7 +1,6 @@
 package com.kraluk.playground.algorithm.util;
 
 import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +18,7 @@ import java.util.stream.IntStream;
 import static java.lang.String.format;
 import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.apache.commons.lang3.StringUtils.SPACE;
+import static org.apache.commons.lang3.Validate.isTrue;
 
 /**
  * Random *integer* numbers file generator
@@ -44,7 +44,7 @@ public final class RandomIntegerFileGenerator {
      * @param output     a {@link Path} representing output file
      */
     public RandomIntegerFileGenerator(final double outputSize, final Path output) {
-        Validate.isTrue(Files.isRegularFile(output), "Output Path should be a regular file!");
+        isTrue(Files.isRegularFile(output), "Output Path should be a regular file!");
 
         this.outputSize = outputSize * GIG; // gigabyte in bytes
         this.output = output;
