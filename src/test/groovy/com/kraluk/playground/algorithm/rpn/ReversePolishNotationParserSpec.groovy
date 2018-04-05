@@ -3,16 +3,16 @@ package com.kraluk.playground.algorithm.rpn
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import static com.kraluk.playground.algorithm.rpn.solver.EquationSolver.SolverType.EXP4J
+import static com.kraluk.playground.algorithm.rpn.solver.EquationSolver.SolverType.JAVA_SCRIPT
+
 class ReversePolishNotationParserSpec extends Specification {
 
-    def parser
-
-    def setup() {
-        parser = new ReversePolishNotationParser()
-    }
-
     @Unroll
-    def "should parse '#expression' and get result value #expected"() {
+    def "should parse '#expression' with solver '#solverType' and get result value #expected"() {
+        given:
+        def parser = new ReversePolishNotationParser(solverType)
+
         when:
         def result = parser.parse(expression)
 
@@ -20,13 +20,19 @@ class ReversePolishNotationParserSpec extends Specification {
         result == expected
 
         where:
-        expression                   || expected
-        "2.4 5.1 +"                  || 7.5
-        "12 2 3 4 * 10 5 / + * +"    || 40
-        "2 7 + 3 / 14 3 - 4 * + 2 /" || 23.5
+        solverType  || expression                   || expected
+        JAVA_SCRIPT || "2.4 5.1 +"                  || 7.5
+        JAVA_SCRIPT || "12 2 3 4 * 10 5 / + * +"    || 40
+        JAVA_SCRIPT || "2 7 + 3 / 14 3 - 4 * + 2 /" || 23.5
+        EXP4J       || "2.4 5.1 +"                  || 7.5
+        EXP4J       || "12 2 3 4 * 10 5 / + * +"    || 40
+        EXP4J       || "2 7 + 3 / 14 3 - 4 * + 2 /" || 23.5
     }
 
     def "should throw an exception when the input expression is not valid or nullified"() {
+        given:
+        def parser = new ReversePolishNotationParser()
+
         when:
         parser.parse(expression)
 

@@ -26,7 +26,6 @@ import static java.lang.String.format;
 public final class ReversePolishNotationParser {
     private static final Logger log = LogManager.getLogger(ReversePolishNotationParser.class);
 
-
     private static final String DELIMITER = " ";
     private static final String TWO_ARG_EXPRESSION_FORMAT = "%s%s%s";
 

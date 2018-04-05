@@ -1,5 +1,6 @@
 package com.kraluk.playground.algorithm.rpn.solver
 
+import com.kraluk.playground.algorithm.common.exception.PlaygroundException
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -22,5 +23,17 @@ class JsEquationSolverSpec extends Specification {
         "5*5"      || 25.0
         "3/3"      || 1.0
         "4-3"      || 1.0
+    }
+
+    def "should thrown an exception when the expression is not parsable"() {
+        given:
+        def solver = new JsEquationSolver()
+        def expression = "foobarfoobar"
+
+        when:
+        solver.solve(expression)
+
+        then:
+        thrown(PlaygroundException)
     }
 }
