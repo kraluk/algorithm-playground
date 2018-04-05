@@ -7,7 +7,7 @@ import java.nio.file.Path
 
 import static spock.util.matcher.HamcrestMatchers.closeTo
 
-class RandomIntegerFileGeneratorTest extends Specification {
+class RandomIntegerFileGeneratorSpec extends Specification {
 
     final def ACCEPTABLE_ERROR = 1e-2
     final def SIZE = 0.1
@@ -18,11 +18,6 @@ class RandomIntegerFileGeneratorTest extends Specification {
     void setup() {
         outputDirectory = Files.createTempDirectory("fg")
         outputFile = Files.createTempFile(outputDirectory, "gen", ".txt")
-    }
-
-    void cleanup() {
-        Files.delete(outputFile)
-        Files.delete(outputDirectory)
     }
 
     def "generates a file with a given size"() {
@@ -45,5 +40,10 @@ class RandomIntegerFileGeneratorTest extends Specification {
 
         then:
         thrown(IllegalArgumentException)
+    }
+
+    void cleanup() {
+        Files.delete(outputFile)
+        Files.delete(outputDirectory)
     }
 }
