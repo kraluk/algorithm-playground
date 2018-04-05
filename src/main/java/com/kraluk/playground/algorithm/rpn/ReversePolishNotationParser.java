@@ -11,9 +11,10 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.Objects;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static java.lang.String.format;
 
 /**
  * Reverse Polish Notation Parser
@@ -37,8 +38,12 @@ public final class ReversePolishNotationParser {
     private final EquationSolver equationSolver;
 
     public ReversePolishNotationParser() {
+        this(SolverType.JAVA_SCRIPT);
+    }
+
+    public ReversePolishNotationParser(final SolverType solverType) {
         this.stack = new ArrayDeque<>();
-        this.equationSolver = EquationSolver.get(SolverType.EXP4J);
+        this.equationSolver = EquationSolver.get(solverType);
     }
 
     public double parse(final String expression) {
@@ -47,18 +52,16 @@ public final class ReversePolishNotationParser {
         log.debug("Attempting to evaluate expression '{}' with '{}'", expression,
             equationSolver.getClass().getSimpleName());
 
-        final StringTokenizer tokenizer = new StringTokenizer(expression, DELIMITER);
+        final String[] tokens = expression.split(DELIMITER);
 
-        while (tokenizer.hasMoreTokens()) {
-            final String token = tokenizer.nextToken();
-
+        for (String token : tokens) {
             if (NumberUtils.isCreatable(token)) {
                 stack.push(token);
             } else {
                 solveSimpleEquation(token);
             }
 
-            log.debug("Stack state: '{}'", Arrays.toString(stack.toArray()));
+            log.debug("Stack state: '{}'", () -> Arrays.toString(stack.toArray()));
         }
 
         String result = stack.pop();
@@ -73,7 +76,7 @@ public final class ReversePolishNotationParser {
         String b = stack.pop();
 
         String evaluated =
-            equationSolver.solve(String.format(TWO_ARG_EXPRESSION_FORMAT, b, operator, a));
+            equationSolver.solve(format(TWO_ARG_EXPRESSION_FORMAT, b, operator, a));
 
         stack.push(evaluated);
     }
