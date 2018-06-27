@@ -1,14 +1,11 @@
 dist: trusty
 language: java
 
+jdk: openjdk10
+
 branches:
   only:
     - master
-
-before_install:
-  - wget https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz
-  - tar -xzf openjdk-10_linux-x64_bin.tar.gz
-  - export JAVA_HOME=$(pwd)/jdk-10
 
 install:
   - chmod +x gradlew
@@ -18,7 +15,6 @@ script: ./gradlew build jacocoTestReport
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
 
 cache:
   directories:
