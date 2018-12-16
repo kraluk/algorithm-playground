@@ -11,8 +11,7 @@ jobs:
 
       - checkout
 
-      - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+      - restore_cache: # restore the saved cache after the first run or if `build.gradle` has changed
           key: algorithm-playground-{{ checksum "build.gradle" }}
 
       - run: ./gradlew dependencies
