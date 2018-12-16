@@ -1,5 +1,6 @@
 package com.kraluk.playground.algorithm.euler
 
+import spock.lang.Ignore
 import spock.lang.Specification
 
 class LargestPrimeFactorSpec extends Specification {
@@ -17,6 +18,7 @@ class LargestPrimeFactorSpec extends Specification {
         //9_345_333_122 | 245_929_819
     }
 
+    @Ignore
     def "calculate largest prime factor of the given number (very crude)"() {
 
         expect:
@@ -30,6 +32,7 @@ class LargestPrimeFactorSpec extends Specification {
         9_345_333_122 | 245_929_819
     }
 
+    @Ignore
     def "calculate largest prime factor of the given number (improved)"() {
 
         expect:

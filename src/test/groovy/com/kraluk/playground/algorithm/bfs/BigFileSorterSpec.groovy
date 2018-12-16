@@ -1,6 +1,6 @@
 package com.kraluk.playground.algorithm.bfs
 
-import com.kraluk.playground.algorithm.util.RandomIntegerFileGenerator
+import com.kraluk.playground.algorithm.util.generator.RandomIntegerFileGenerator
 import spock.lang.Ignore
 import spock.lang.Specification
 import spock.lang.Unroll

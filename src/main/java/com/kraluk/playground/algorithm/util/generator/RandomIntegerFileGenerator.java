@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.util;
+package com.kraluk.playground.algorithm.util.generator;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.time.StopWatch;

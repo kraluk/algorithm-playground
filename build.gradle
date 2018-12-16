@@ -18,7 +18,7 @@ jmh {
     warmupIterations = 5
     timeUnit = 'ms'
     verbosity = 'NORMAL'
-    jmhVersion = '1.20'
+    jmhVersion = '1.21'
 }
 
 jacocoTestReport {
@@ -35,8 +35,8 @@ uptodate {
 check.dependsOn 'uptodate'
 
 // Java version
-sourceCompatibility = JavaVersion.VERSION_1_10
-targetCompatibility = JavaVersion.VERSION_1_10
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 jacoco {
     toolVersion = '0.8.2'
@@ -57,7 +57,7 @@ dependencies {
     compile group: 'net.objecthunter', name: 'exp4j', version: '0.4.8'
 
     // Test dependencies
-    testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.2'
+    testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.4'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.2-groovy-2.5'
     testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
 
@@ -72,5 +72,5 @@ test {
 }
 
 wrapper {
-    gradleVersion = '4.10.2'
+    gradleVersion = '5.0'
 }

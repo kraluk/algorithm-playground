@@ -1,4 +1,4 @@
-package com.kraluk.playground.algorithm.util
+package com.kraluk.playground.algorithm.util.generator
 
 import spock.lang.Specification
 
@@ -7,10 +7,10 @@ import java.nio.file.Path
 
 import static spock.util.matcher.HamcrestMatchers.closeTo
 
-class RandomIntegerFileGeneratorSpec extends Specification {
+class ImprovedIntegerFileGeneratorSpec extends Specification {
 
-    final def ACCEPTABLE_ERROR = 1e-2
-    final def SIZE = 0.1
+    static final def ACCEPTABLE_ERROR = 1e-2
+    static final def SIZE = 0.0005
 
     Path outputDirectory
     Path outputFile
@@ -22,7 +22,7 @@ class RandomIntegerFileGeneratorSpec extends Specification {
 
     def "generates a file with a given size"() {
         given:
-        def generator = new RandomIntegerFileGenerator(SIZE, outputFile)
+        def generator = new ImprovedIntegerFileGenerator(SIZE, outputFile)
 
         when:
         generator.generate()
