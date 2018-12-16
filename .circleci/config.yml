@@ -27,7 +27,7 @@ jobs:
 
       # Save test results
       - run:
-        name: Save test results
+          name: Save test results
           command: |
             mkdir -p ~/junit/
             find . -type f -regex ".*/build/test-results/test/.*xml" -exec cp {} ~/junit/ \;
