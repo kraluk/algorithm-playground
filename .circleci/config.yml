@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+
+    working_directory: ~/algorithm-playground
+
+    docker:
+      - image: circleci/openjdk:11.0.1-jdk-browsers
+
+    steps:
+
+      - checkout
+
+      - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: algorithm-playground-{{ checksum "build.gradle" }}
+
+      - run: ./gradlew dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: algorithm-playground-{{ checksum "build.gradle" }}
+
+      - run: ./gradlew --version
+      - run: ./gradlew --scan --stacktrace build
+
+      # Save test results
+      - run:
+        name: Save test results
+          command: |
+            mkdir -p ~/junit/
+            find . -type f -regex ".*/build/test-results/test/.*xml" -exec cp {} ~/junit/ \;
+          when: always
+      - store_test_results:
+        path: ~/junit
+      - store_artifacts:
+        path: ~/junit
