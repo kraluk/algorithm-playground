@@ -1,6 +1,6 @@
 # algorithm-playground
 
-[![codecov](https://codecov.io/gh/kraluk/algorithm-playground/branch/master/graph/badge.svg)](https://codecov.io/gh/kraluk/algorithm-playground)
+[![CircleCI](https://circleci.com/gh/kraluk/algorithm-playground.svg?style=svg)](https://circleci.com/gh/kraluk/algorithm-playground) [![codecov](https://codecov.io/gh/kraluk/algorithm-playground/branch/master/graph/badge.svg)](https://codecov.io/gh/kraluk/algorithm-playground)
 
 My own algorithm's place
 

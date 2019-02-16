@@ -1,36 +1,42 @@
 package com.kraluk.playground.algorithm.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class IntegersTest {
+class IntegersTest {
 
     @Test
-    public void isInteger() {
+    @DisplayName("Check if given Double is an Integer value")
+    void testIsIntegerWithDouble() {
         boolean result = Integers.isInteger(2.00);
 
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
     @Test
-    public void isIntegerAlso() {
+    @DisplayName("Check if given Integer is an Integer value")
+    void testIsIntegerWithRealInteger() {
         boolean result = Integers.isInteger(2);
 
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
     @Test
-    public void isIntegerAlsoAlso() {
+    @DisplayName("Check if given Double with several numbers after decimal point is an Integer value")
+    void testIsIntegerWithBiggerDouble() {
         boolean result = Integers.isInteger(2.00000000000000000);
 
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
     @Test
-    public void isNotInteger() {
+    @DisplayName("Check if given Double is not an Integer value")
+    void testIsIntegerWithNonIntegerDouble() {
         boolean result = Integers.isInteger(14.421);
 
-        assertEquals(false, result);
+        assertFalse(result);
     }
 }

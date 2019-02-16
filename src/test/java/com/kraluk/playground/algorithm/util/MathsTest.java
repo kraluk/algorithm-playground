@@ -1,14 +1,16 @@
 package com.kraluk.playground.algorithm.util;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MathsTest {
+class MathsTest {
 
     @Test
-    public void finMinIndexTest() {
+    void finMinIndexTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
         int index = Maths.findMinIndex(array, 0);
 
@@ -16,7 +18,7 @@ public class MathsTest {
     }
 
     @Test
-    public void finMinIndexSecondTest() {
+    void finMinIndexSecondTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
         int index = Maths.findMinIndex(array, 2);
 
@@ -24,7 +26,7 @@ public class MathsTest {
     }
 
     @Test
-    public void finMinIndexThirdTest() {
+    void finMinIndexThirdTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
         int index = Maths.findMinIndex(array, 5);
 
@@ -32,7 +34,7 @@ public class MathsTest {
     }
 
     @Test
-    public void swapTest() {
+    void swapTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
         Maths.swap(array, 5, 6);
 
@@ -40,7 +42,7 @@ public class MathsTest {
     }
 
     @Test
-    public void swapSecondTest() {
+    void swapSecondTest() {
         int[] array = {345, 0, 34, 1, 999, 2, 555};
         Maths.swap(array, 1, 5);
 
@@ -48,16 +50,16 @@ public class MathsTest {
     }
 
     @Test
-    public void isPrimeTest() {
+    void isPrimeTest() {
         boolean result = Maths.isPrime(29);
 
-        assertEquals(true, result);
+        assertTrue(result);
     }
 
     @Test
-    public void isPrimeSecondTest() {
+    void isPrimeSecondTest() {
         boolean result = Maths.isPrime(81);
 
-        assertEquals(false, result);
+        assertFalse(result);
     }
 }
