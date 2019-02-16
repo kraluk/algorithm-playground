@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   build:
 
@@ -35,3 +37,5 @@ jobs:
           path: ~/junit
       - store_artifacts:
           path: ~/junit
+      - codecov/upload:
+          file: {{ coverage_report_filepath }}
