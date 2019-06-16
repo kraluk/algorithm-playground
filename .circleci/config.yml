@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  codecov: codecov/codecov@1.0.3
-
 jobs:
   build:
 
@@ -15,31 +12,17 @@ jobs:
 
       - checkout
 
-      - restore_cache: # restore the saved cache after the first run or if `build.gradle` has changed
-          key: algorithm-playground-{{ checksum "build.gradle" }}
+      - restore_cache:
+          keys:
+            - ap-dependencies-{{ checksum "build.gradle" }}
+            - ap-dependencies-
 
       - run: ./gradlew dependencies
 
       - save_cache:
           paths:
             - ~/.gradle
-          keys:
-            - algorithm-playground-{{ checksum "build.gradle" }}
-            - algorithm-playground-
+          key: ap-dependencies-{{ checksum "build.gradle" }}
 
       - run: ./gradlew --version
       - run: ./gradlew test
-
-      # Save test results
-      - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/junit/
-            find . -type f -regex ".*/build/test-results/test/.*xml" -exec cp {} ~/junit/ \;
-          when: always
-      - store_test_results:
-          path: ~/junit
-      - store_artifacts:
-          path: ~/junit
-      - codecov/upload:
-          file: {{ coverage_report_filepath }}
