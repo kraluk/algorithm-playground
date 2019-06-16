@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@1.0.3
-  
+
 jobs:
   build:
 
@@ -23,10 +23,12 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle
-          key: algorithm-playground-{{ checksum "build.gradle" }}
+          keys:
+            - algorithm-playground-{{ checksum "build.gradle" }}
+            - algorithm-playground-
 
       - run: ./gradlew --version
-      - run: ./gradlew --scan --stacktrace build
+      - run: ./gradlew test
 
       # Save test results
       - run:
